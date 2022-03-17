@@ -1,28 +1,33 @@
-#include "stdio.h"
+#include <stdio.h>
 
 /**
- * main - prints the first 50 Fibonacci numbers starting with 1 and 2
+ * main - prints the first 98 Fibonacci numbers, starting with 1 and 2
  *
- * Return: int.
+ * Return: Always 0.
  */
 
 int main(void)
 {
-	long i = 0;
-	long j = 1;
-	int n = 0;
-	long fib;
+	long int sum;
+	long int first, second;
+	int count;
 
-	while (n < 98)
+	sum = 0;
+	first = 0;
+	second = 1;
+	count = 0;
+
+	while (count < 97)
 	{
-		fib = j + i;
-		if (n != 97)
-			printf("%ld, ", fib);
-		else
-			printf("%ld\n", fib);
-		i = j;
-		j = fib;
-		n += 1;
+		sum = first + second;
+		printf("%li, ", sum);
+		first = second;
+		second = sum;
+
+		count++;
 	}
+	sum = first + second;
+	printf("%li\n", sum);
+
 	return (0);
 }
